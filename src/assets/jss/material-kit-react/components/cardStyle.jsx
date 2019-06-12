@@ -22,7 +22,7 @@ const cardStyle = {
     boxShadow: "none"
   },
   cardCarousel: {
-    overflow: "hidden"
+    overflow: "hidden",
   }
 };
 

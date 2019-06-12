@@ -20,11 +20,40 @@ import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.js
 import ProductSection from "./Sections/ProductSection.jsx";
 import CarouselSection from "./Sections/CarouselSection.jsx";
 
+//unsplash API
+import Unsplash,  { toJson } from 'unsplash-js';
+//connect API keys
+const unsplash = new Unsplash({
+  applicationId: "e9e6340b92801896ebe8167682e9f28c64e1cd1b7547a307bd1a8137b02b3f7f",
+  secret: "392c23c259ae20e44c8f4988352a9f1f6a93b2068c4cec672eff33f58e761a1e"
+});
+
 const dashboardRoutes = [];
 
+
+
+
 class LandingPage extends React.Component {
+  constructor(){
+    super()
+    this.state ={
+      imgSource: [],
+    }
+  }
+
+componentDidMount = () => {
+  unsplash.search.photos("intimate couple", 1, 5)
+  .then(toJson)
+  .then(json => this.setState({imgSource: json["results"]}))
+}
+
+
+
+
+
   render() {
-    const { classes, ...rest } = this.props;
+    const { classes, ...rest} = this.props;
+    const queryResult = this.state.imgSource;
     return (
       <div>
         <Header
@@ -64,7 +93,7 @@ class LandingPage extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <CarouselSection />
+            <CarouselSection imgSource={queryResult} />
             <ProductSection />
           </div>
         </div>
