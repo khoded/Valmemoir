@@ -1,23 +1,14 @@
 import React from 'react';
-import Card from "components/Card/Card.jsx";
+import Card from "components/MemCard.jsx";
 
 
 const CardList = ({ userStory }) => {
 	return (
 		<div>
-		{
-		userStory.map((user, i) => {
-			return(
-				<Card 	
-				key={i}
-				id = {userStory[i].id}
-				name = {userStory[i].name}
-				email = {userStory[i].email}
-				/>
-			);
-		})
-	}
-	</div>
+		    <Card
+				
+			/>
+	   </div>
  	);
 }
 export default  CardList;

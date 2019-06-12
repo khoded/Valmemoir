@@ -6,6 +6,9 @@ import withStyles from "@material-ui/core/styles/withStyles";
 
 // @material-ui/icons
 
+//tachyons styles
+import 'tachyons'; 
+
 // core components
 import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer/Footer.jsx";
