@@ -6,7 +6,6 @@ import { Router, Route, Switch } from "react-router-dom";
 import "assets/scss/material-kit-react.scss";
 
 // pages for this product
-import Components from "views/Components/Components.jsx";
 import LandingPage from "views/LandingPage/LandingPage.jsx";
 
 var hist = createBrowserHistory();

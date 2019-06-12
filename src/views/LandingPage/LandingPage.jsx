@@ -12,15 +12,13 @@ import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import Parallax from "components/Parallax/Parallax.jsx";
 
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.jsx";
-import TeamSection from "./Sections/TeamSection.jsx";
-import WorkSection from "./Sections/WorkSection.jsx";
+import CarouselSection from "./Sections/CarouselSection.jsx";
 
 const dashboardRoutes = [];
 
@@ -51,14 +49,14 @@ class LandingPage extends React.Component {
                 </h4>
                 <br />
                 <Button
-                  color="danger"
+                  color="success"
                   size="lg"
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="fas fa-play" />
-                  Watch video
+                  Share your Story
                 </Button>
               </GridItem>
             </GridContainer>
@@ -66,9 +64,8 @@ class LandingPage extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
+            <CarouselSection />
             <ProductSection />
-            <TeamSection />
-            <WorkSection />
           </div>
         </div>
         <Footer />
