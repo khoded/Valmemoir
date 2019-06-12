@@ -17,8 +17,10 @@ import Parallax from "components/Parallax/Parallax.jsx";
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.jsx";
+import StorySection from "./Sections/StorySection.jsx";
 import CarouselSection from "./Sections/CarouselSection.jsx";
+import MemoirSection from "./Sections/MemoirSection.jsx";
+
 
 //unsplash API
 import Unsplash,  { toJson } from 'unsplash-js';
@@ -94,7 +96,8 @@ componentDidMount = () => {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <CarouselSection imgSource={queryResult} />
-            <ProductSection />
+            <StorySection />
+            <MemoirSection />
           </div>
         </div>
         <Footer />
