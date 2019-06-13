@@ -87,8 +87,10 @@ componentDidMount = () => {
 
   handleFormSubmit(e) {
     e.preventDefault();
+
     let userData = this.state.newUser;
-    console.log(userData.firstname);
+    let Data = Object.keys(userData).map(i => userData[i]);
+    return Data;
   }
 
 
@@ -149,7 +151,7 @@ componentDidMount = () => {
           <div className={classes.container}>
             <CarouselSection imgSource={queryResult} />
             <StorySection />
-            <MemoirSection />
+            <MemoirSection  handleFormdata={this.handleFormSubmit} />
           </div>
         </div>
         <Footer />

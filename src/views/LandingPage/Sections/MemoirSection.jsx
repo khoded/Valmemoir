@@ -17,18 +17,19 @@ const style = {
 
 class Cards extends React.Component {
   render() {
-    const { classes } = this.props;
+    const { classes,handleFormData } = this.props;
     return (
       <Card style={{width: "20rem"}}>
         <img
           style={{height: "auto", width: "40%", display: "block"}}
           className={classes.imgCardTop}
-          src="https://ui-avatars.com/api/?name=John+Doe"
+          src="https://ui-avatars.com/api/?name=+handleFormData[0]+handleFormData[1]"
           alt="Card-img-cap"
         />
         <CardBody className="tc grow">
-          <h4 className={classes.cardTitle}>story title</h4>
-          <p>userdata.firstname</p>
+        <h4 className={classes.cardTitle}>handleFormData[2]</h4>
+          <h4 className={classes.cardTitle}>handleFormData[4]</h4>
+          <p>handleFormData[5]</p>
          <ModalReadMore />
         </CardBody>
       </Card>
