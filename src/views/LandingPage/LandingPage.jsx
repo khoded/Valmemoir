@@ -14,7 +14,6 @@ import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import Button from "components/CustomButtons/Button.jsx";
 import Parallax from "components/Parallax/Parallax.jsx";
 
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
@@ -23,7 +22,7 @@ import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.js
 import StorySection from "./Sections/StorySection.jsx";
 import CarouselSection from "./Sections/CarouselSection.jsx";
 import MemoirSection from "./Sections/MemoirSection.jsx";
-
+import ModalSection from "./Sections/ModalSection.jsx";
 
 //unsplash API
 import Unsplash,  { toJson } from 'unsplash-js';
@@ -82,16 +81,7 @@ componentDidMount = () => {
                   .Share your love story, Start with us.
                 </h4>
                 <br />
-                <Button
-                  color="success"
-                  size="lg"
-                  href=""
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fas fa-play" />
-                  Share your Story
-                </Button>
+                <ModalSection />
               </GridItem>
             </GridContainer>
           </div>

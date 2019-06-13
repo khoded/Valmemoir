@@ -1,6 +1,6 @@
 const modalStyle = {
   modal: {
-    borderRadius: "6px"
+    borderRadius: "10px"
   },
   modalHeader: {
     borderBottom: "none",
@@ -35,9 +35,9 @@ const modalStyle = {
   },
   modalBody: {
     paddingTop: "24px",
-    paddingRight: "24px",
+    paddingRight: "30px",
     paddingBottom: "16px",
-    paddingLeft: "24px",
+    paddingLeft: "30px",
     position: "relative"
   },
   modalFooter: {
