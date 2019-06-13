@@ -113,47 +113,17 @@ class Modal extends React.Component{
               />
           </GridItem>
 
-
-
-
-
-
-
-
           <GridItem xs={12} sm={12} md={12}>
-              <Radio
-                        checked={this.state.selectedEnabled === "a"}
-                        onChange={this.handleChangeEnabled}
-                        value="a"
-                        name="radio button enabled"
-                        aria-label="A"
-                        icon={
-                          <FiberManualRecord
-                            className={classes.radioUnchecked}
-                          />
-                        }
-                        checkedIcon={
-                          <FiberManualRecord className={classes.radioChecked} />
-                        }
-                        classes={{
-                          checked: classes.radio
-                        }}
-                      />
+             <CustomInput
+                  id="regular"
+                  inputProps={{
+                      placeholder: "Gender"
+                  }}
+                  formControlProps={{
+                      fullWidth: true
+                  }}
+              />
           </GridItem>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <GridItem xs={12} sm={12} md={12}>
               <CustomInput
