@@ -9,16 +9,10 @@ import DialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import GridItem from "components/Grid/GridItem.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
-
-
-
-
-
-
-
-
+import Radio from "@material-ui/core/Radio";
 // @material-ui/icons
 import Close from "@material-ui/icons/Close";
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
 // core components
 import Button from "components/CustomButtons/Button.jsx";
 
@@ -51,7 +45,7 @@ class Modal extends React.Component{
       <div>
         <Button
           color="success"
-          rectangle
+          
           onClick={() => this.handleClickOpen("modal")}>
           SHARE YOUR MEMOIR
         </Button>
@@ -118,6 +112,49 @@ class Modal extends React.Component{
                   }}
               />
           </GridItem>
+
+
+
+
+
+
+
+
+          <GridItem xs={12} sm={12} md={12}>
+              <Radio
+                        checked={this.state.selectedEnabled === "a"}
+                        onChange={this.handleChangeEnabled}
+                        value="a"
+                        name="radio button enabled"
+                        aria-label="A"
+                        icon={
+                          <FiberManualRecord
+                            className={classes.radioUnchecked}
+                          />
+                        }
+                        checkedIcon={
+                          <FiberManualRecord className={classes.radioChecked} />
+                        }
+                        classes={{
+                          checked: classes.radio
+                        }}
+                      />
+          </GridItem>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
            <GridItem xs={12} sm={12} md={12}>
               <CustomInput
                   id="regular"
@@ -129,6 +166,7 @@ class Modal extends React.Component{
                   }}
               />
           </GridItem>
+
         <GridItem xs={12} sm={12} md={12}>
               <CustomInput
                   id="regular"

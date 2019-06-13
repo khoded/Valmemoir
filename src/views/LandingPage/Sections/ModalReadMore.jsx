@@ -41,7 +41,7 @@ class Modal extends React.Component{
       <div>
         <Button
           color="success"
-          rectangle
+          
           onClick={() => this.handleClickOpen("modal")}>
           READ MORE
         </Button>
@@ -84,7 +84,7 @@ class Modal extends React.Component{
             </Button>
             <Button
               onClick={() => this.handleClose("modal")}
-              color="successNoBackground">
+              color="success">
               Yes
             </Button>
           </DialogActions>
