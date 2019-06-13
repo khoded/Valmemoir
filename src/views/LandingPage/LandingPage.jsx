@@ -22,7 +22,7 @@ import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.js
 import StorySection from "./Sections/StorySection.jsx";
 import CarouselSection from "./Sections/CarouselSection.jsx";
 import MemoirSection from "./Sections/MemoirSection.jsx";
-import ModalSection from "./Sections/ModalSection.jsx";
+import ModalFormSection from "./Sections/ModalFormSection.jsx";
 
 //unsplash API
 import Unsplash,  { toJson } from 'unsplash-js';
@@ -42,8 +42,8 @@ class LandingPage extends React.Component {
     super()
     this.state ={
       imgSource: [],
-    }
   }
+}
 
 componentDidMount = () => {
   unsplash.search.photos("intimate couple", 1, 5)
@@ -51,7 +51,8 @@ componentDidMount = () => {
   .then(json => this.setState({imgSource: json["results"]}))
 }
 
-
+ 
+  
 
 
 
@@ -81,7 +82,7 @@ componentDidMount = () => {
                   .Share your love story, Start with us.
                 </h4>
                 <br />
-                <ModalSection />
+                <ModalFormSection />
               </GridItem>
             </GridContainer>
           </div>

@@ -71,6 +71,9 @@ function CustomInput({ ...props }) {
         }}
         id={id}
         {...inputProps}
+        onChange={props.handleChange}
+        value={props.value}
+        name={props.name}
       />
     </FormControl>
   );
