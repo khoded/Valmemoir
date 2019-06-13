@@ -28,7 +28,7 @@ class Cards extends React.Component {
         />
         <CardBody className="tc grow">
           <h4 className={classes.cardTitle}>story title</h4>
-          <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p>userdata.firstname</p>
          <ModalReadMore />
         </CardBody>
       </Card>

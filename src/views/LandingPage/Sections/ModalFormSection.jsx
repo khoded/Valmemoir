@@ -27,39 +27,12 @@ class Modal extends React.Component{
     super(props);
     this.state = {
       modal: false,
-
-       newUser: {
-        firstname: '',
-        lastname: '',
-        username: '',
-        gender: '',
-        Headline: '',
-        Story: ''
-
-      },
-
     };
-
-    this.handleClearForm = this.handleClearForm.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
 
 
-  handleInput(e) {
-    let value = e.target.value;
-    let name = e.target.name;
-    this.setState(
-      prevState => ({
-        newUser: {
-          ...prevState.newUser,
-          [name]: value
-        }
-      }),
-      () => console.log(this.state.newUser)
-    );
-  }
+  
 
 
   handleClickOpen(modal) {
@@ -76,35 +49,16 @@ class Modal extends React.Component{
   }
 
 
-  handleFormSubmit(e) {
-    e.preventDefault();
-    let userData = this.state.newUser;
-    console.log(userData)
-  }
-
-
-  handleClearForm(e) {
-    e.preventDefault();
-    this.setState({
-      newUser: {
-        firstname: '',
-        lastname: '',
-        username: '',
-        gender: '',
-        Headline: '',
-        Story: ''
-      }
-    });
-  }
 
 
 
   render(){
-    const { classes} = this.props;
+    const { classes, handleInput, handleClearForm, handleFormSubmit} = this.props;
     return (
       <div>
         <Button
           color="success"
+          
           onClick={() => this.handleClickOpen("modal")}>
           SHARE YOUR MEMOIR
         </Button>
@@ -142,20 +96,18 @@ class Modal extends React.Component{
               <CustomInput
                   id="regular"
                   name={'firstname'}
-                  value={this.state.newUser.firstname} 
                   inputProps={{
                       placeholder: "First Name"
                   }}
                   formControlProps={{
                       fullWidth: true
                   }}
-                handleChange = {this.handleInput}
+                handleChange = {handleInput}
               />
           </GridItem>
            <GridItem xs={12} sm={12} md={12}>
               <CustomInput
                   id="regular"
-                  value={this.state.newUser.lastname} 
                   name={'lastname'}
                   inputProps={{
                       placeholder: "Last Name"
@@ -163,13 +115,12 @@ class Modal extends React.Component{
                   formControlProps={{
                       fullWidth: false
                   }}
-                  handleChange = {this.handleInput}
+                  handleChange = {handleInput}
               />
           </GridItem>
            <GridItem xs={12} sm={12} md={12}>
               <CustomInput
                   id="regular"
-                  value={this.state.newUser.username} 
                   name={'username'}
                   inputProps={{
                       placeholder: "Username"
@@ -177,7 +128,7 @@ class Modal extends React.Component{
                   formControlProps={{
                       fullWidth: true
                   }}
-                   handleChange = {this.handleInput}
+                   handleChange = {handleInput}
               />
           </GridItem>
 
@@ -185,22 +136,20 @@ class Modal extends React.Component{
              <CustomInput
                   id="regular"s
                   name={'gender'}
-                  value={this.state.newUser.gender} 
                   inputProps={{
                       placeholder: "Gender"
                   }}
                   formControlProps={{
                       fullWidth: true
                   }}
-                  handleChange = {this.handleInput}
+                  handleChange = {handleInput}
               />
           </GridItem>
 
            <GridItem xs={12} sm={12} md={12}>
               <CustomInput
                   id="regular"
-                  name={'Headline'}
-                  value={this.state.newUser.Headline} 
+                  name={'Headline'} 
                   inputProps={{
                       placeholder: "Headline"
                   }}
@@ -215,7 +164,6 @@ class Modal extends React.Component{
               <CustomInput
                   id="regular"
                   name={'Story'}
-                  value={this.state.newUser.Story} 
                   inputProps={{
                       placeholder: "Story"
                   }}
@@ -229,12 +177,17 @@ class Modal extends React.Component{
           <DialogActions
             className={classes.modalFooter +" " +classes.modalFooterCenter}>
             <Button
-              onClick= {this.handleFormSubmit}
+              onClick={handleFormSubmit}
               color="success">
               Share Story
             </Button>
             <Button
-              onClick={this.handleClearForm}
+              onClick={() => this.handleClose("modal")}
+              color="danger">
+              Close
+            </Button>
+            <Button
+              onClick={handleClearForm}
               color="danger">
               Clear
             </Button>

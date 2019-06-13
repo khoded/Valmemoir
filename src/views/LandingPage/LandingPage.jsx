@@ -41,8 +41,21 @@ class LandingPage extends React.Component {
   constructor(){
     super()
     this.state ={
+      modal: false,
       imgSource: [],
+      newUser: {
+        firstname: '',
+        lastname: '',
+        username: '',
+        gender: '',
+        Headline: '',
+        Story: ''
+
+      },
   }
+    this.handleClearForm = this.handleClearForm.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
 }
 
 componentDidMount = () => {
@@ -51,8 +64,49 @@ componentDidMount = () => {
   .then(json => this.setState({imgSource: json["results"]}))
 }
 
+
  
-  
+
+  handleInput(e) {
+    let value = e.target.value;
+    let name = e.target.name;
+    this.setState(
+      prevState => ({
+        newUser: {
+          ...prevState.newUser,
+          [name]: value
+        }
+      }),
+      () => this.state.newUser
+    );
+  }
+
+
+
+
+
+  handleFormSubmit(e) {
+    e.preventDefault();
+    let userData = this.state.newUser;
+    console.log(userData.firstname);
+  }
+
+
+  handleClearForm(e) {
+    e.preventDefault();
+    this.setState({
+      newUser: {
+        firstname: '',
+        lastname: '',
+        username: '',
+        gender: '',
+        Headline: '',
+        Story: ''
+      }
+    });
+  }
+
+
 
 
 
@@ -82,7 +136,11 @@ componentDidMount = () => {
                   .Share your love story, Start with us.
                 </h4>
                 <br />
-                <ModalFormSection />
+                <ModalFormSection
+                  handleInput = {this.handleInput}
+                  handleClearForm ={this.handleClearForm}
+                  handleFormSubmit={this.handleFormSubmit}
+                 />
               </GridItem>
             </GridContainer>
           </div>
